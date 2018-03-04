@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.ReservationController.ReservationMainController">
+    <children>
+        <SplitPane dividerPositions="0.5822454308093995" orientation="VERTICAL" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <SplitPane dividerPositions="0.00909090909090909" orientation="VERTICAL" prefHeight="442.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <ToolBar layoutX="244.0" layoutY="-2.0" prefHeight="40.0" prefWidth="778.0">
+                                            <items>
+                                                <Button fx:id="newReservationBTN" mnemonicParsing="false" onAction="#onNewReservationClicked" prefHeight="26.0" prefWidth="156.0" text="New Reservation" />
+                                                <Button fx:id="roomManagerBTN" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#onRoomManagerClicked" prefHeight="26.0" prefWidth="156.0" text="Room Manager" />
+                                    <Button fx:id="serviceManagerBTN" layoutX="170.0" layoutY="11.0" mnemonicParsing="false" onAction="#onServiceManagerClicked" prefHeight="26.0" prefWidth="156.0" text="Service Manager" />
+                                            </items>
+                                        </ToolBar>
+                                    </children></AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.23823529411764705" layoutY="-46.0" prefHeight="442.0" prefWidth="1020.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="440.0" prefWidth="244.0">
+                                                    <children>
+                                                        <TextField fx:id="customerNameTF" layoutX="70.0" layoutY="36.0" prefHeight="26.0" prefWidth="156.0" promptText="Customer Name" />
+                                                        <Slider fx:id="totalSlider" layoutX="72.0" layoutY="192.0" prefHeight="16.0" prefWidth="156.0" />
+                                                        <DatePicker fx:id="fromDatePicker" layoutX="70.0" layoutY="85.0" prefHeight="26.0" prefWidth="156.0" promptText="From Date" />
+                                                        <DatePicker fx:id="untilDatePicker" layoutX="70.0" layoutY="132.0" prefHeight="26.0" prefWidth="156.0" promptText="Until Date" />
+                                                        <Button fx:id="searchBTN" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" onAction="#onSearchClicked" text="Search" />
+                                                        <ImageView fx:id="customerIcon2" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+                                                        <ImageView fx:id="fromDateIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+                                                        <ImageView fx:id="priceIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
+                                                        <ImageView fx:id="untilDateIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
+                                                        <Label layoutX="82.0" layoutY="168.0" text="Total:" />
+                                                        <Label fx:id="sliderTF" layoutX="130.0" layoutY="168.0" />
+                                                        <Button fx:id="clearBTN" layoutX="136.0" layoutY="348.0" mnemonicParsing="false" onAction="#onClearClicked" text="Clear" />
+                                          <Button fx:id="payButton" disable="true" layoutX="45.0" layoutY="266.0" mnemonicParsing="false" onAction="#setPaid" prefHeight="27.0" prefWidth="81.0" text="Pay" />
+                                          <Button fx:id="cancelButton" disable="true" layoutX="134.0" layoutY="266.0" mnemonicParsing="false" onAction="#setCanceled" prefHeight="27.0" prefWidth="82.0" text="Cancel" />
+                                          <Button fx:id="checkInButton" disable="true" layoutX="46.0" layoutY="303.0" mnemonicParsing="false" onAction="#setIsArrived" prefHeight="27.0" prefWidth="80.0" text="Check-in" />
+                                          <Button fx:id="checkOutButton" disable="true" layoutX="133.0" layoutY="303.0" mnemonicParsing="false" onAction="#setCheckedOut" text="Check-out" />
+                                          <Text fx:id="statusText" layoutX="6.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" wrappingWidth="227.15771484375" />
+                                                    </children></AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <ScrollPane layoutY="44.0" prefHeight="214.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <content>
+                                                                <TableView fx:id="reservationTableView" prefHeight="444.0" prefWidth="755.0">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="RidColumn" prefWidth="75.0" text="RID" />
+                                                                        <TableColumn fx:id="CustomerIdColumn" prefWidth="112.0" text="CustomerID" />
+                                                                        <TableColumn fx:id="fromDateColumn" minWidth="0.0" prefWidth="128.0" text="From Date" />
+                                                                        <TableColumn fx:id="untilDateColumn" minWidth="0.0" prefWidth="129.0" text="Until Date" />
+                                                                        <TableColumn fx:id="paidColumn" prefWidth="89.0" text="Paid" />
+                                                                        <TableColumn fx:id="totalColumn" prefWidth="90.0" text="Total €" />
+                                                                        <TableColumn fx:id="canceledColumn" prefWidth="83.0" text="Canceled" />
+                                                                    </columns>
+                                                                </TableView>
+                                                            </content>
+                                                        </ScrollPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="1022.0">
+                    <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <TitledPane fx:id="customerInformationPane" alignment="TOP_CENTER" collapsible="false" layoutX="9.0" layoutY="57.0" prefHeight="249.0" prefWidth="305.0" text="Customer Information" wrapText="true">
+                                    <content>
+                                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="407.0">
+                                                    <children>
+                                                        <Label layoutX="49.0" layoutY="12.0" text="Name:" />
+                                                        <Label layoutX="29.0" layoutY="29.0" text="Surname:" />
+                                                        <Label layoutX="35.0" layoutY="48.0" text="Address:" />
+                                                        <Label layoutX="67.0" layoutY="66.0" text="ZIP:" />
+                                                        <Label layoutX="53.0" layoutY="83.0" text="Place:" />
+                                                        <Label layoutX="36.0" layoutY="101.0" text="Country:" />
+                                                        <Label layoutX="47.0" layoutY="118.0" text="Phone:" />
+                                                        <Label layoutX="47.0" layoutY="135.0" text="E-mail:" />
+                                                        <Label layoutX="24.0" layoutY="152.0" text="Birth date:" />
+                                                        <Label layoutX="64.0" layoutY="168.0" text="Sex:" />
+                                                        <Label layoutX="74.0" layoutY="186.0" text="ID:" />
+                                                        <Label layoutX="14.0" layoutY="202.0" text="Credit Card:" />
+                                                        <Label fx:id="nameLB" layoutX="100.0" layoutY="13.0" />
+                                                        <Label fx:id="surnameLB" layoutX="100.0" layoutY="29.0" />
+                                                        <Label fx:id="addressLB" layoutX="100.0" layoutY="48.0" />
+                                                        <Label fx:id="zipLB" layoutX="100.0" layoutY="66.0" />
+                                                        <Label fx:id="placeLB" layoutX="100.0" layoutY="83.0" />
+                                                        <Label fx:id="countryLB" layoutX="100.0" layoutY="101.0" />
+                                                        <Label fx:id="phoneLB" layoutX="100.0" layoutY="118.0" />
+                                                        <Label fx:id="emailLB" layoutX="100.0" layoutY="135.0" />
+                                                        <Label fx:id="bdateLB" layoutX="100.0" layoutY="152.0" />
+                                                        <Label fx:id="sexLB" layoutX="100.0" layoutY="168.0" />
+                                                        <Label fx:id="idLB" layoutX="100.0" layoutY="186.0" />
+                                                        <Label fx:id="creditCardLB" layoutX="100.0" layoutY="202.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </ScrollPane>
+                                    </content>
+                                </TitledPane>
+                                <Label fx:id="customerLabel" layoutX="83.0" layoutY="17.0" text="Customer">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TitledPane alignment="TOP_CENTER" animated="false" collapsible="false" layoutX="340.0" layoutY="57.0" prefHeight="249.0" prefWidth="281.0" text="Room Information" textAlignment="CENTER">
+                                    <content>
+                                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="359.0">
+                                                    <children>
+                                                        <Label layoutX="64.0" layoutY="8.0" text="RNR:" />
+                                                        <Label layoutX="18.0" layoutY="25.0" text="Room Price:" />
+                                                        <Label layoutX="29.0" layoutY="43.0" text="Breakfast:" />
+                                                        <Label layoutX="28.0" layoutY="60.0" text="Category :" />
+                                                        <Label layoutX="59.0" layoutY="78.0" text="Beds:" />
+                                                        <Label layoutX="51.0" layoutY="96.0" text="Extras:" />
+                                                        <Label fx:id="rnrLB" layoutX="100.0" layoutY="8.0" />
+                                                        <Label fx:id="priceLB" layoutX="100.0" layoutY="25.0" />
+                                                        <Label fx:id="breakfastLB" layoutX="100.0" layoutY="43.0" />
+                                                        <Label fx:id="categoryLB" layoutX="100.0" layoutY="60.0" />
+                                                        <Label fx:id="bedsLB" layoutX="100.0" layoutY="78.0" />
+                                                        <Label fx:id="extrasLB" layoutX="100.0" layoutY="96.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </ScrollPane>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane alignment="TOP_CENTER" animated="false" collapsible="false" layoutX="643.0" layoutY="57.0" prefHeight="249.0" prefWidth="359.0" text="Services Information" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                                    <content>
+                                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="204.0" prefWidth="396.0">
+                                                    <children>
+                                                        <TableView fx:id="serviceTableView" layoutY="2.0" prefHeight="204.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="sridColumn" prefWidth="48.0" text="Srid" />
+                                                                <TableColumn fx:id="typeColumn" prefWidth="105.0" text="Type" />
+                                                                <TableColumn fx:id="servicePriceColumn" prefWidth="62.0" text="Price €" />
+                                                                <TableColumn fx:id="descriptionColumn" prefWidth="143.0" text="Description" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </ScrollPane>
+                                    </content>
+                                </TitledPane>
+                                <Label layoutX="425.0" layoutY="19.0" text="Room">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="741.0" layoutY="19.0" text="Services">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fx:id="customerIcon" fitHeight="43.0" fitWidth="47.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="roomIcon" fitHeight="43.0" fitWidth="47.0" layoutX="342.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="serviceIcon" fitHeight="43.0" fitWidth="47.0" layoutX="663.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

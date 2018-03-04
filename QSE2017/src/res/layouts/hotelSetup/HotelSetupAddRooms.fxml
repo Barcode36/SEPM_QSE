@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="657.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.HotelSetupAddRoomsController">
+    <children>
+        <Text layoutX="74.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add rooms to your hotel">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Text>
+        <Text layoutX="36.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose category:" />
+        <Separator layoutX="46.0" layoutY="53.0" prefHeight="4.0" prefWidth="294.0" />
+        <TextArea fx:id="extrasTextArea" layoutX="52.0" layoutY="176.0" prefHeight="97.0" prefWidth="284.0" promptText="Room extras, eg. TV, mini bar" wrapText="true" />
+        <Text layoutX="127.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add extras (optional):" />
+        <Text layoutX="36.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room number:" />
+        <ComboBox fx:id="categoryComboBox" layoutX="168.0" layoutY="112.0" prefHeight="27.0" prefWidth="168.0" />
+        <Button layoutX="264.0" layoutY="67.0" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="27.0" prefWidth="72.0" text="Add" />
+        <TextField fx:id="roomNameTextField" layoutX="144.0" layoutY="67.0" prefHeight="27.0" prefWidth="108.0" promptText="eg. 101, 102" />
+      <TableView fx:id="roomsTable" layoutX="359.0" layoutY="14.0" prefHeight="261.0" prefWidth="284.0">
+        <columns>
+          <TableColumn fx:id="roomNumberColumn" minWidth="0.0" prefWidth="89.0" text="Room Nr." />
+          <TableColumn fx:id="categoryColumn" prefWidth="86.0" text="Category" />
+            <TableColumn fx:id="extrasColumn" prefWidth="108.0" text="Extras" />
+        </columns>
+      </TableView>
+      <Button fx:id="confirmbutton" layoutX="576.0" layoutY="283.0" mnemonicParsing="false" onAction="#onConfirmButtonClicked" text="Confirm" />
+      <Button layoutX="359.0" layoutY="283.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="Remove" />
+    </children>
+</AnchorPane>

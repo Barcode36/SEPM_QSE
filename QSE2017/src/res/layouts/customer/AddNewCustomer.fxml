@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="803.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.AddNewCustomerController">
+   <children>
+      <ChoiceBox fx:id="typeChoiceBox" layoutX="157.0" layoutY="100.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="inHotelWithChoiceBox" layoutX="461.0" layoutY="100.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="titleChoiceBox" layoutX="157.0" layoutY="202.0" prefWidth="150.0" />
+      <TextField fx:id="firstNameField" layoutX="158.0" layoutY="239.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="lastNameField" layoutX="158.0" layoutY="277.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="identificationField" layoutX="158.0" layoutY="312.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="birthDatePicker" layoutX="461.0" layoutY="202.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="phoneField" layoutX="461.0" layoutY="237.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="emailField" layoutX="461.0" layoutY="277.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="streetField" layoutX="157.0" layoutY="403.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="cityField" layoutX="157.0" layoutY="447.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="postalCodeField" layoutX="461.0" layoutY="403.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="countryField" layoutX="461.0" layoutY="447.0" prefHeight="25.0" prefWidth="149.0" />
+      <ChoiceBox fx:id="creditCardTypeChoiceBox" layoutX="157.0" layoutY="542.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="creditCardNumberField" layoutX="156.0" layoutY="584.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="holderField" layoutX="156.0" layoutY="626.0" prefHeight="25.0" prefWidth="149.0" />
+      <ChoiceBox fx:id="monthChoiceBox" layoutX="461.0" layoutY="542.0" prefHeight="25.0" prefWidth="59.0" />
+      <ChoiceBox fx:id="yearChoiceBox" layoutX="547.0" layoutY="542.0" prefHeight="25.0" prefWidth="59.0" />
+      <TextField fx:id="cvvField" layoutX="461.0" layoutY="584.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextArea fx:id="notesArea" layoutX="46.0" layoutY="710.0" prefHeight="57.0" prefWidth="258.0" />
+      <Label layoutX="45.0" layoutY="99.0" prefHeight="25.0" prefWidth="89.0" text="Type">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="45.0" layoutY="487.0" prefHeight="20.0" prefWidth="564.0" />
+      <Label layoutX="347.0" layoutY="403.0" prefHeight="25.0" prefWidth="76.0" text="Postal Code">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="350.0" layoutY="447.0" prefHeight="25.0" prefWidth="70.0" text="Country">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="447.0" prefHeight="25.0" prefWidth="70.0" text="City">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="403.0" prefHeight="25.0" prefWidth="70.0" text="Street">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="366.0" prefHeight="27.0" prefWidth="131.0" text="Address Details">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="41.0" layoutY="346.0" prefHeight="20.0" prefWidth="571.0" />
+      <Label layoutX="350.0" layoutY="277.0" prefHeight="25.0" prefWidth="99.0" text="E-mail">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="350.0" layoutY="239.0" prefHeight="25.0" prefWidth="99.0" text="Phone Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="347.0" layoutY="202.0" prefHeight="25.0" prefWidth="89.0" text="Date of Birth">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="41.0" layoutY="145.0" prefHeight="20.0" prefWidth="571.0" />
+      <Label layoutX="43.0" layoutY="157.0" prefHeight="27.0" prefWidth="131.0" text="Personal Details">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="204.0" prefHeight="20.0" prefWidth="53.0" text="Title">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="277.0" prefHeight="25.0" prefWidth="70.0" text="Last Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="239.0" prefHeight="25.0" prefWidth="70.0" text="First Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="40.0" prefHeight="35.0" prefWidth="223.0" text="Add new Customer">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="creditCardDetailsLabel" layoutX="43.0" layoutY="507.0" prefHeight="27.0" prefWidth="150.0" text="Credit card Details">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="312.0" prefHeight="25.0" prefWidth="89.0" text="Identification">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="creditCardTypeLabel" layoutX="45.0" layoutY="542.0" prefHeight="25.0" prefWidth="70.0" text="Type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardNumberLabel" layoutX="44.0" layoutY="584.0" prefHeight="25.0" prefWidth="89.0" text="Card number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="holderLabel" layoutX="44.0" layoutY="626.0" prefHeight="25.0" prefWidth="89.0" text="Holder">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="expirationDateLabel" layoutX="341.0" layoutY="542.0" prefHeight="25.0" prefWidth="99.0" text="Expiration Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="slashLabel" layoutX="530.0" layoutY="542.0" prefHeight="25.0" prefWidth="11.0" text="/">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cvvLabel" layoutX="342.0" layoutY="584.0" prefHeight="25.0" prefWidth="99.0" text="CVV">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="509.0" layoutY="756.0" mnemonicParsing="false" onAction="#clickCancel" prefHeight="25.0" prefWidth="99.0" text="Cancel" />
+      <Button fx:id="addButton" layoutX="509.0" layoutY="721.0" mnemonicParsing="false" onAction="#clickOnAdd" prefHeight="25.0" prefWidth="99.0" text="Add" />
+      <Label fx:id="inHotelWithLabel" layoutX="347.0" layoutY="102.0" prefHeight="20.0" prefWidth="89.0" text="In Hotel with:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Separator fx:id="separator" layoutX="45.0" layoutY="661.0" prefHeight="20.0" prefWidth="564.0" />
+      <Label fx:id="notesLabel" layoutX="43.0" layoutY="681.0" prefHeight="25.0" prefWidth="53.0" text="Notes">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="newsletterCheckBox" layoutX="341.0" layoutY="686.0" mnemonicParsing="false" text="Newsletter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="268.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/customer-add.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="addImageView" fitHeight="33.0" fitWidth="31.0" layoutX="467.0" layoutY="718.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/customer-add.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cancelImageView" fitHeight="31.0" fitWidth="31.0" layoutX="467.0" layoutY="753.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/previous.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="169.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="181.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/id-card.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="creditCardImageView" fitHeight="25.0" fitWidth="25.0" layoutX="194.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/icons/cards.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

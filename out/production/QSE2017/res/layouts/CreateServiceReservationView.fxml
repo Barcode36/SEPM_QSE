@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.ReservationController.CreateServiceReservationController">
+   <children>
+      <SplitPane dividerPositions="0.5384615384615384" prefHeight="641.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="536.0">
+               <children>
+                  <SplitPane orientation="VERTICAL" prefHeight="678.0" prefWidth="559.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                               <TextField fx:id="nameTF" layoutX="85.0" layoutY="113.0" prefHeight="26.0" prefWidth="144.0" promptText="Customer Name" />
+                               <TextField fx:id="surnameTF" layoutX="350.0" layoutY="113.0" prefHeight="26.0" prefWidth="144.0" promptText="Customer Surname" />
+                              <ComboBox fx:id="serviceType_ComboBox" layoutX="374.0" layoutY="290.0" prefHeight="26.0" prefWidth="150.0" promptText="Choose type" />
+                               <DatePicker fx:id="birthdayDP" layoutX="85.0" layoutY="166.0" prefHeight="26.0" prefWidth="144.0" promptText="Birthday" />
+                              <Label layoutX="25.0" layoutY="115.0" text="Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="125.0" layoutY="24.0" text="Create Service Reservation/s:">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="312.0" layoutY="290.0" text="Type:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="createBT" layoutX="180.0" layoutY="600.0" mnemonicParsing="false" onAction="#onCreateClicked" text="Create">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font></Button>
+                               <DatePicker fx:id="fromDP" layoutX="372.0" layoutY="375.0" prefHeight="28.0" prefWidth="150.0" promptText="From Date" />
+                              <DatePicker fx:id="untilDP" layoutX="372.0" layoutY="433.0" prefHeight="28.0" prefWidth="150.0" promptText="Until Date" />
+                              <Button fx:id="addCustomerBT" layoutX="350.0" layoutY="166.0" mnemonicParsing="false" onAction="#onAddCustomerClicked" text="Add Customer" />
+                              <CheckBox fx:id="entireStay_CheckBox" layoutX="319.0" layoutY="460.0" mnemonicParsing="false" text="During the entire stay" />
+                              <TableView fx:id="toBeReserved_Table" layoutX="25.0" layoutY="290.0" prefHeight="223.0" prefWidth="273.0">
+                                <columns>
+                                  <TableColumn fx:id="serviceIDReservedColumn" prefWidth="83.0" text="Service ID" />
+                                  <TableColumn fx:id="fromColumn" prefWidth="94.0" text="From" />
+                                    <TableColumn fx:id="untilColumn" prefWidth="95.0" text="Until" />
+                                </columns>
+                              </TableView>
+                              <Separator layoutX="10.0" layoutY="225.0" prefHeight="5.0" prefWidth="510.0" />
+                              <Label layoutX="265.0" layoutY="115.0" text="Surname:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="25.0" layoutY="250.0" text="To be reserved:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="10.0" layoutY="560.0" prefHeight="5.0" prefWidth="510.0" />
+                              <Button fx:id="addBT" layoutX="450.0" layoutY="505.0" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="26.0" prefWidth="72.0" text="Add" />
+                              <Button fx:id="removeBT" layoutX="370.0" layoutY="505.0" mnemonicParsing="false" onAction="#onRemoveClicked" prefHeight="26.0" prefWidth="72.0" text="Remove" />
+                              <ImageView fx:id="birthdayIM" fitHeight="40.0" fitWidth="45.0" layoutX="25.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" />
+                              <DatePicker fx:id="onDP" layoutX="372.0" layoutY="400.0" prefHeight="26.0" prefWidth="150.0" promptText="On Date" />
+                              <ImageView fx:id="fromIM" fitHeight="40.0" fitWidth="45.0" layoutX="311.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="untilIM" fitHeight="40.0" fitWidth="45.0" layoutX="311.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="onIM" fitHeight="40.0" fitWidth="45.0" layoutX="311.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true" />
+                              <TextField fx:id="serviceIDTF" layoutX="372.0" layoutY="325.0" prefHeight="26.0" prefWidth="156.0" promptText="Service ID" />
+                              <ImageView fx:id="idIM" fitHeight="35.0" fitWidth="40.0" layoutX="311.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button fx:id="cancelBT" layoutX="280.0" layoutY="600.0" mnemonicParsing="false" onAction="#onCancelClicked" text="Cancel">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fx:id="tickCrossICON" fitHeight="30.0" fitWidth="38.0" layoutX="283.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="serviceList_Table" layoutX="62.0" layoutY="71.0" prefHeight="607.0" prefWidth="447.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
+                    <columns>
+                      <TableColumn fx:id="serviceIDColumn" prefWidth="86.0" text="Service ID" />
+                      <TableColumn fx:id="typeColumn" prefWidth="118.0" text="Type" />
+                        <TableColumn fx:id="priceColumn" prefWidth="59.0" text="Price €" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="200.0" text="Description" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="150.0" layoutY="23.0" text="List of available services:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="325.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.PaymentController.PaymentController">
+   <children>
+      <Text layoutX="108.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="15.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID:" />
+      <Text layoutX="16.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total price:" />
+      <Text layoutX="16.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" />
+      <Text layoutX="14.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" />
+      <TextField fx:id="amountTextField" layoutX="119.0" layoutY="178.0" prefHeight="27.0" prefWidth="119.0" />
+      <Text layoutX="15.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Method:" />
+      <SplitMenuButton fx:id="methodSplitMenuButton" contentDisplay="CENTER" layoutX="122.0" layoutY="215.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Cash">
+        <items>
+          <MenuItem fx:id="cashMenuItem" mnemonicParsing="false" onAction="#cashOnAction" text="Cash" />
+          <MenuItem fx:id="cardMenuItem" mnemonicParsing="false" onAction="#cardOnAction" text="Card" />
+        </items>
+      </SplitMenuButton>
+      <Button fx:id="payButton" layoutX="107.0" layoutY="265.0" mnemonicParsing="false" onAction="#payButtonClicked" prefHeight="27.0" prefWidth="61.0" text="Pay" />
+      <Button fx:id="cancelButton" layoutX="182.0" layoutY="265.0" mnemonicParsing="false" onAction="#cancelButtonClicked" prefHeight="23.0" prefWidth="63.0" text="Cancel" />
+      <TextField fx:id="reservationIdTextField" editable="false" layoutX="119.0" layoutY="64.0" prefHeight="27.0" prefWidth="119.0" />
+      <TextField fx:id="totalPriceTextField" editable="false" layoutX="119.0" layoutY="103.0" prefHeight="27.0" prefWidth="119.0" />
+      <TextField fx:id="balanceTextField" editable="false" layoutX="119.0" layoutY="140.0" prefHeight="27.0" prefWidth="119.0" />
+      <Text layoutX="240.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€" />
+      <Text layoutX="239.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€" />
+      <Text layoutX="240.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€" />
+   </children>
+</AnchorPane>

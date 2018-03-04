@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="355.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.HotelSetupController">
+   <children>
+      <TextField fx:id="nameTextField" layoutX="26.0" layoutY="27.0" promptText="Hotel name" />
+      <TextField fx:id="addressTextField" layoutX="26.0" layoutY="74.0" promptText="Hotel address" />
+      <TextField fx:id="ibanTextField" layoutX="26.0" layoutY="118.0" promptText="Iban" />
+      <TextField fx:id="bicTextField" layoutX="26.0" layoutY="164.0" promptText="Bic" />
+      <ImageView fx:id="hotelLogoImageView" fitHeight="150.0" fitWidth="308.0" layoutX="341.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/res/images/no_image.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="8.0" layoutY="208.0" prefHeight="4.0" prefWidth="550.0" />
+      <Separator layoutX="265.0" layoutY="26.0" orientation="VERTICAL" prefHeight="172.0" prefWidth="5.0" />
+      <Label layoutX="26.0" layoutY="212.0" text="E-Mail host:" />
+      <TextField fx:id="gmailTextField" layoutX="233.0" layoutY="234.0" promptText="E-mail" />
+      <PasswordField fx:id="passwordTextField" layoutX="233.0" layoutY="276.0" promptText="Password" />
+      <TextField fx:id="smtpTextField" layoutX="416.0" layoutY="234.0" promptText="SMTP Host" visible="false" />
+      <TextField fx:id="portTextField" layoutX="416.0" layoutY="276.0" promptText="SMTP Port" visible="false" />
+      <CheckBox fx:id="tlsCheckBox" layoutX="416.0" layoutY="317.0" mnemonicParsing="false" text="TLS" visible="false" />
+      <Button fx:id="saveButton" layoutX="534.0" layoutY="313.0" mnemonicParsing="false" text="Next" />
+      <ChoiceBox fx:id="hostSpinner" layoutX="25.0" layoutY="234.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

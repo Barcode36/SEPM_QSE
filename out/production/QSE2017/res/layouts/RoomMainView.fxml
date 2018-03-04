@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.Room_Controllers.RoomMainController">
+   <children>
+      <SplitPane dividerPositions="0.5822454308093995" orientation="VERTICAL" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.00909090909090909" orientation="VERTICAL" prefHeight="442.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ToolBar layoutX="244.0" layoutY="-2.0" prefHeight="40.0" prefWidth="778.0">
+                                 <items>
+                                    <Button fx:id="reservationMainBTN1" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#onReservationMainClicked" prefHeight="26.0" prefWidth="156.0" text="Reservation Main" />
+                                    <Button fx:id="newRoomBTN" mnemonicParsing="false" onAction="#onNewRoomClicked" prefHeight="26.0" prefWidth="156.0" text="New Room" />
+                                 </items>
+                              </ToolBar>
+                           </children></AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.23823529411764705" prefHeight="379.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="440.0" prefWidth="244.0">
+                                       <children>
+                                          <TextField fx:id="roomNrTF" alignment="TOP_CENTER" layoutX="70.0" layoutY="36.0" prefHeight="26.0" prefWidth="156.0" promptText="Room Number" />
+                                          <Slider fx:id="priceSlider" layoutX="72.0" layoutY="226.0" prefHeight="16.0" prefWidth="156.0" />
+                                          <Button fx:id="searchBTN" layoutX="23.0" layoutY="320.0" mnemonicParsing="false" onAction="#onSearchClicked" prefHeight="40.0" prefWidth="83.0" text="Search" />
+                                          <ImageView fx:id="roomNrIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="categoryIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="priceIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Label layoutX="82.0" layoutY="202.0" text="Price:" />
+                                          <ImageView fx:id="bedsIcon" fitHeight="40.0" fitWidth="47.0" layoutX="11.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="clearBTN" layoutX="134.0" layoutY="320.0" mnemonicParsing="false" onAction="#onClearClicked" prefHeight="40.0" prefWidth="83.0" text="Clear" />
+                                          <ComboBox fx:id="categoryCBox" layoutX="69.0" layoutY="123.0" prefHeight="26.0" prefWidth="156.0" promptText="Select Category" />
+                                          <Label fx:id="priceLB" layoutX="120.0" layoutY="203.0" />
+                                       </children></AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <ScrollPane layoutY="44.0" prefHeight="214.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="roomsTableView" prefHeight="444.0" prefWidth="755.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="rnrColumn" prefWidth="75.0" text="RNR" />
+                                                      <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="92.0" text="Price €" />
+                                                      <TableColumn fx:id="categoryColumn" prefWidth="182.0" text="Category" />
+                                                      <TableColumn fx:id="extrasColumn" minWidth="0.0" prefWidth="372.0" text="Extras" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="1022.0">
+               <children>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TitledPane fx:id="customerInformationPane" alignment="TOP_CENTER" collapsible="false" layoutX="9.0" layoutY="57.0" prefHeight="249.0" prefWidth="305.0" text="Image" wrapText="true">
+                           <content>
+                              <ImageView fx:id="roomImage" fitHeight="224.0" fitWidth="304.0" pickOnBounds="true" preserveRatio="true" />
+                           </content>
+                        </TitledPane>
+                        <Label fx:id="customerLabel" layoutX="83.0" layoutY="17.0" text="Room Image">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TitledPane alignment="TOP_CENTER" animated="false" collapsible="false" layoutX="340.0" layoutY="57.0" prefHeight="249.0" prefWidth="281.0" text="Room Information" textAlignment="CENTER">
+                           <content>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="279.0">
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="15.0" text="RNR:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="46.0" text="Category :">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="extrasTextArea" layoutX="20.0" layoutY="108.0" prefHeight="63.0" prefWidth="239.0" promptText="Room extras, eg. TV, mini bar" wrapText="true" />
+                                          <Text layoutX="73.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add extras (optional):" />
+                                          <Button fx:id="updateBTN" layoutX="93.0" layoutY="179.0" mnemonicParsing="false" onAction="#onUpdateClicked" prefHeight="36.0" prefWidth="83.0" text="Update" />
+                                          <ComboBox fx:id="categoryCBox1" layoutX="111.0" layoutY="45.0" prefHeight="26.0" prefWidth="156.0" promptText="Select Category" />
+                                          <Label fx:id="roomIdLB" layoutX="104.0" layoutY="15.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                        <Label layoutX="425.0" layoutY="19.0" text="Edit Room">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="741.0" layoutY="19.0" text="Room Locks">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageIcon" fitHeight="43.0" fitWidth="47.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="editRoomIcon" fitHeight="43.0" fitWidth="47.0" layoutX="342.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="lockIcon" fitHeight="43.0" fitWidth="47.0" layoutX="663.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <TitledPane alignment="TOP_CENTER" animated="false" collapsible="false" layoutX="642.0" layoutY="57.0" prefHeight="249.0" prefWidth="359.0" text="Locks" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                     <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="204.0" prefWidth="396.0">
+                                 <children>
+                                    <TableView fx:id="locksTableView" layoutY="2.0" prefHeight="204.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="lidColumn" prefWidth="48.0" text="LID" />
+                                          <TableColumn fx:id="reasonColumn" prefWidth="141.0" text="Reason" />
+                                          <TableColumn fx:id="fromColumn" text="From" />
+                                          <TableColumn fx:id="untilColumn" prefWidth="89.0" text="Until" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

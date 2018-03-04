@@ -1,0 +1,13 @@
+/** file: reaper.css
+    place in same directory as DebtCollectionTable.java */
+.root                             {
+    -fx-font: 18px "Comic Sans MS";
+    -fx-background-color: #61d4c3;
+}
+.column-header-background         { -fx-background-color: azure;       }
+.willPayRow                       { -fx-background-color: palegreen;   }
+.wontPayRow                       { -fx-background-color: coral;       }
+.willPayCell                      { -fx-background-color: forestgreen; }
+.wontPayCell                      { -fx-background-color: firebrick;   }
+.table-row-cell:empty             { -fx-background-color: cornsilk;    }
+.table-row-cell:empty .table-cell { -fx-border-width:     0px;         }

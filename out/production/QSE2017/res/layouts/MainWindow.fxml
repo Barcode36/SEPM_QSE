@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="paneCSSID" fx:id="paneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.MainWindowController">
+   <children>
+      <MenuBar layoutY="-2.0" prefHeight="35.0" prefWidth="1576.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Reservation">
+            <items>
+              <MenuItem fx:id="menuBarOpenReservationID" mnemonicParsing="false" onAction="#menuBarOpenReservation" text="Add Reservation" />
+                  <MenuItem fx:id="menuBarEditReservationID" mnemonicParsing="false" onAction="#menuBarEditReservation" text="Edit Reservation" />
+                  <MenuItem fx:id="menuBarShowReservationsID" mnemonicParsing="false" onAction="#menuBarShowReservations" text="Show Reservations" />
+                  <MenuItem fx:id="menuBarDeleteReservationID" mnemonicParsing="false" onAction="#menuBarDeleteReservation" text="Delete Reservations" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Services">
+            <items>
+              <MenuItem fx:id="menuBarAddServicesID" mnemonicParsing="false" onAction="#menuBarAddServices" text="Add Service" />
+                  <MenuItem fx:id="menuBarEditServicesID" mnemonicParsing="false" onAction="#menuBarEditServices" text="Edit Service" />
+                  <MenuItem fx:id="menuBarShowServicesID" mnemonicParsing="false" onAction="#menuBarShowServices" text="Show Services" />
+                  <MenuItem fx:id="menuBarDeleteServicesID" mnemonicParsing="false" onAction="#menuBarDeleteServices" text="Delete Service" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Guest">
+               <items>
+                  <MenuItem fx:id="menuBarAddNewCustomerID" mnemonicParsing="false" onAction="#menuBarAddNewCustomer" text="Add new Customer" />
+                  <MenuItem fx:id="menuBarShowAllGuestsID" mnemonicParsing="false" onAction="#menuBarShowAllGuests" text="Show All Guests" />
+                  <MenuItem fx:id="menuBarEditGuestID" mnemonicParsing="false" onAction="#menuBarEditGuest" text="Edit Guest" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Rooms">
+            <items>
+              <MenuItem fx:id="menuBarShowAllRoomsID" mnemonicParsing="false" onAction="#menuBarShowAllRooms" text="Show All Rooms" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Separator layoutX="1.0" layoutY="84.0" prefHeight="21.0" prefWidth="1576.0" />
+      <Text layoutX="886.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello,">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="userName" layoutX="991.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="datePicker" layoutX="122.0" layoutY="99.0" />
+      <Text layoutX="22.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show from:" />
+      <Button layoutX="350.0" layoutY="99.0" mnemonicParsing="false" onAction="#setTimeTable" text="Search" />
+      <Label fx:id="timeLabel" layoutX="393.0" layoutY="37.0" text="Label">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="101.0" layoutY="39.0" text="Label">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1272.0" layoutY="94.0" orientation="VERTICAL" prefHeight="710.0" prefWidth="3.0" />
+      <Button fx:id="reservationsButton" layoutX="1287.0" layoutY="179.0" mnemonicParsing="false" onAction="#openReservationWindow" prefHeight="31.0" prefWidth="263.0" text="Reservations" />
+      <Button fx:id="roomsButton" layoutX="1287.0" layoutY="375.0" mnemonicParsing="false" onAction="#openRoomsWindow" prefHeight="31.0" prefWidth="263.0" text="Rooms" />
+      <Button fx:id="paymentsButton" layoutX="1287.0" layoutY="416.0" mnemonicParsing="false" onAction="#openPaymentsWindow" prefHeight="31.0" prefWidth="263.0" text="Invoice" />
+      <Button fx:id="customerButton" layoutX="1287.0" layoutY="459.0" mnemonicParsing="false" onAction="#openCustomerWindow" prefHeight="31.0" prefWidth="263.0" text="Customers" />
+      <Button fx:id="editRoomsButton" layoutX="1287.0" layoutY="580.0" mnemonicParsing="false" onAction="#editRoomsAdminOnlyWindow" prefHeight="31.0" prefWidth="263.0" text="Edit Rooms" />
+      <Button fx:id="employeeButton" layoutX="1287.0" layoutY="622.0" mnemonicParsing="false" onAction="#openEmployeesWindowAdminOnly" prefHeight="31.0" prefWidth="263.0" text="Employee" />
+      <TableView fx:id="roomNoTable" layoutX="17.0" layoutY="138.0" prefHeight="650.0" prefWidth="126.0" stylesheets="@my-special-column-style.css">
+        <columns>
+          <TableColumn fx:id="roomNoColumn" editable="false" prefWidth="125.0" resizable="false" sortable="false" text="Room No.       " />
+        </columns>
+      </TableView>
+      <TableView fx:id="datesTable" layoutX="121.0" layoutY="138.0" prefHeight="650.0" prefWidth="1002.0" />
+      <Button fx:id="newResButton" layoutX="1287.0" layoutY="224.0" mnemonicParsing="false" onAction="#openNewRoomReservation" prefHeight="31.0" prefWidth="263.0" text="New Room Reservation" />
+      <Button fx:id="openServiceRes" layoutX="1287.0" layoutY="314.0" mnemonicParsing="false" onAction="#openServiceReservation" prefHeight="31.0" prefWidth="263.0" text="New Service Reservation" />
+      <ImageView fx:id="imageClock" fitHeight="50.0" fitWidth="60.0" layoutX="333.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageDate" fitHeight="50.0" fitWidth="60.0" layoutX="30.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="arrowImageField" fitHeight="150.0" fitWidth="126.0" layoutX="1135.0" layoutY="348.0" onMouseClicked="#expand" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="serviceMainButton" layoutX="1287.0" layoutY="269.0" mnemonicParsing="false" onAction="#openServiceReservationMainWindow" prefHeight="31.0" prefWidth="263.0" text="Services" />
+      <Button fx:id="openStatictiscButton" layoutX="1287.0" layoutY="503.0" mnemonicParsing="false" onAction="#openStatsWindow" prefHeight="31.0" prefWidth="263.0" text="Statistics" />
+      <Button fx:id="employeeButton1" layoutX="1287.0" layoutY="684.0" mnemonicParsing="false" onAction="#openNewsLetter" prefHeight="31.0" prefWidth="263.0" text="Newsletter" />
+      
+   </children>
+</AnchorPane>

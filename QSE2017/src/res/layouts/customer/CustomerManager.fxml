@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="470.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.CustomerManagerController">
+   <children>
+      <TableView fx:id="tableView" layoutX="38.0" layoutY="127.0" prefHeight="317.0" prefWidth="596.0">
+         <columns>
+            <TableColumn fx:id="pidColumn" prefWidth="47.0" text="PID" />
+            <TableColumn fx:id="nameColumn" prefWidth="119.0" text="Name" />
+            <TableColumn fx:id="surnameColumn" prefWidth="122.0" text="Surname" />
+            <TableColumn fx:id="birthDateColumn" prefWidth="98.0" text="Date of Birth" />
+            <TableColumn fx:id="isCustomerColumn" prefWidth="94.0" text="Customer" />
+            <TableColumn fx:id="countryColumn" prefWidth="115.0" text="Country" />
+         </columns>
+      </TableView>
+      <ChoiceBox fx:id="statusChoiceBox" layoutX="138.0" layoutY="38.0" prefWidth="150.0" />
+      <Label layoutX="35.0" layoutY="38.0" prefHeight="25.0" prefWidth="51.0" text="Status:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="78.0" prefHeight="25.0" prefWidth="51.0" text="Filter:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="551.0" layoutY="80.0" mnemonicParsing="false" onAction="#clickOnClearFilters" prefHeight="25.0" prefWidth="81.0" text="Clear Filters" />
+      <Button layoutX="551.0" layoutY="38.0" mnemonicParsing="false" onAction="#clickOnApply" prefHeight="25.0" prefWidth="81.0" text="Apply" />
+      <TextField fx:id="toTextField" layoutX="368.0" layoutY="80.0" prefHeight="25.0" prefWidth="110.0" />
+      <TextField fx:id="fromTextField" layoutX="368.0" layoutY="38.0" prefHeight="25.0" prefWidth="110.0" />
+      <Label layoutX="300.0" layoutY="78.0" prefHeight="17.0" prefWidth="26.0" text="To:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="38.0" prefHeight="25.0" prefWidth="65.0" text="From:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="filterChoiceBox" layoutX="138.0" layoutY="78.0" prefWidth="150.0" />
+      <Button fx:id="editButton" layoutX="700.0" layoutY="341.0" mnemonicParsing="false" onAction="#clickOnEdit" prefHeight="25.0" prefWidth="123.0" text="Edit Customer" />
+      <Button layoutX="700.0" layoutY="306.0" onAction="#clickOnShowDetails" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Show Details" />
+      <Button fx:id="cancelButton" layoutX="700.0" layoutY="412.0" mnemonicParsing="false" onAction="#clickCancel" prefHeight="25.0" prefWidth="123.0" text="Cancel" />
+      <Button layoutX="700.0" layoutY="267.0" mnemonicParsing="false" onAction="#clickOnAdd" prefHeight="25.0" prefWidth="123.0" text="Add New Customer" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="98.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/funnel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="98.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/customer.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="fromDatePicker" layoutX="368.0" layoutY="38.0" prefHeight="25.0" prefWidth="110.0" />
+      <DatePicker fx:id="toDatePicker" layoutX="368.0" layoutY="80.0" prefHeight="25.0" prefWidth="110.0" />
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="514.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/error.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="511.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/businessman.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="700.0" layoutY="378.0" onAction="#clickOnDelete" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Delete Customer" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="654.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/previous.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="654.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/004-management.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="654.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/020-curriculum.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="654.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/customer-remove.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="654.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icons/customer-add.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

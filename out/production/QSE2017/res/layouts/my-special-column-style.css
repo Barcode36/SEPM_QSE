@@ -1,0 +1,6 @@
+#roomNoTable .table-cell {
+    -fx-font-size: 26px;
+}
+#roomNoTable .table-column {
+    -fx-alignment: CENTER;
+}

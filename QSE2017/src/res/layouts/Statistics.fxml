@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="791.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ac.at.tuwien.sepm.QSE15.gui.controllers.StatisticsController">
+    <children>
+        <PieChart fx:id="roomReservationPieChart" layoutX="23.0" layoutY="279.0" prefHeight="248.0" prefWidth="488.0" />
+        <PieChart fx:id="serviceReservationPieChart" layoutX="31.0" layoutY="527.0" prefHeight="248.0" prefWidth="488.0" />
+        <BarChart fx:id="roomReservationBarChart" layoutX="493.0" layoutY="216.0" prefHeight="257.0" prefWidth="552.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </BarChart>
+        <Label layoutX="21.0" layoutY="14.0" text="Reservations Statistics">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <BarChart fx:id="serviceReservationBarChart" layoutX="501.0" layoutY="494.0" prefHeight="257.0" prefWidth="552.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </BarChart>
+        <Label layoutX="475.0" layoutY="90.0" text="From">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <DatePicker fx:id="fromDatePicker" layoutX="532.0" layoutY="90.0" prefHeight="25.0" prefWidth="105.0" />
+        <DatePicker fx:id="toDatePicker" layoutX="532.0" layoutY="127.0" prefHeight="25.0" prefWidth="105.0" />
+        <Label layoutX="475.0" layoutY="131.0" prefHeight="17.0" prefWidth="20.0" text="To">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="683.0" layoutY="90.0" text="Room Category">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="683.0" layoutY="127.0" text="Service type">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="roomCategoryChoiceBox" layoutX="816.0" layoutY="90.0" prefHeight="25.0" prefWidth="122.0" />
+        <ChoiceBox fx:id="serviceTypeChoiceBox" layoutX="816.0" layoutY="131.0" prefHeight="25.0" prefWidth="122.0" />
+        <Button layoutX="967.0" layoutY="90.0" mnemonicParsing="false" onAction="#clickOnShowStatistics" prefHeight="25.0" prefWidth="98.0" text="Show Statistics" />
+        <Button layoutX="967.0" layoutY="131.0" mnemonicParsing="false" onAction="#clearCharts" prefHeight="25.0" prefWidth="98.0" text="Clear Charts" />
+        <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="408.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icons/presentation.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="caption" layoutX="475.0" layoutY="565.0" prefHeight="53.0" prefWidth="75.0" />
+        <TextField fx:id="amountTextField" layoutX="181.0" layoutY="237.0" prefHeight="25.0" prefWidth="86.0" />
+        <ChoiceBox fx:id="percentageChoiceBox" layoutX="181.0" layoutY="203.0" prefHeight="25.0" prefWidth="86.0" />
+        <Label layoutX="31.0" layoutY="88.0" prefHeight="25.0" prefWidth="129.0" text="Updete price for:">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="amountRadioButton" layoutX="31.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="For Amount">
+            <toggleGroup>
+                <ToggleGroup fx:id="percentageOrAmountToggleGroup" />
+            </toggleGroup>
+            <font>
+                <Font size="16.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="percentageRadioButton" layoutX="31.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" selected="true" text="By Percentage" toggleGroup="$percentageOrAmountToggleGroup">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="leastRadioButton" layoutX="31.0" layoutY="156.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="308.0" text="The least often reserved room category">
+            <toggleGroup>
+                <ToggleGroup fx:id="mostOrLeastToggleGroup" />
+            </toggleGroup>
+            <font>
+                <Font size="16.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="mostRadioButton" layoutX="31.0" layoutY="123.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="316.0" selected="true" text="The most often reserved room category" toggleGroup="$mostOrLeastToggleGroup">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </RadioButton>
+        <Button layoutX="339.0" layoutY="237.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="25.0" prefWidth="98.0" text="Update" />
+        <Separator layoutX="31.0" layoutY="277.0" prefHeight="4.0" prefWidth="426.0" />
+        <Separator layoutX="457.0" layoutY="82.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="3.0" />
+    </children>
+</AnchorPane>
